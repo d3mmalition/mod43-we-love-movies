@@ -13,6 +13,7 @@ if (process.env.USER) require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
+app.options('*', cors());
 
 app.use("/movies", moviesRouter);
 app.use("/reviews", reviewsRouter);
