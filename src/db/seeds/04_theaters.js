@@ -1,4 +1,7 @@
 exports.seed = function (knex) {
+   return knex("theaters")
+    .del()
+    .then(function () {
   return knex("theaters").insert([
     {
       name: "Regal City Center",
@@ -25,4 +28,5 @@ exports.seed = function (knex) {
       zip: "97223",
     },
   ]);
+});
 };

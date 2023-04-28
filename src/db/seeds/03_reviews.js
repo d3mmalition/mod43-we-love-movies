@@ -43,5 +43,10 @@ exports.seed = async function (knex) {
   const movieIds = await knex("movies").select("movie_id");
 
   const reviews = generateReviews(criticIds, movieIds);
+
+  //Truncate the review table to remove all data
+  await knex("reviews").truncate();
+
+  // Insert new data into the reviews table
   return knex("reviews").insert(reviews);
 };

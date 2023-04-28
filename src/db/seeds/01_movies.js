@@ -1,4 +1,7 @@
 exports.seed = function (knex) {
+  return knex("movies")
+  .del()
+  .then(function () {
   return knex("movies").insert([
     {
       title: "Spirited Away",
@@ -145,4 +148,5 @@ exports.seed = function (knex) {
         "https://m.media-amazon.com/images/M/MV5BN2EwM2I5OWMtMGQyMi00Zjg1LWJkNTctZTdjYTA4OGUwZjMyXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_Ratio0.6791_AL_.jpg",
     },
   ]);
+   });
 };

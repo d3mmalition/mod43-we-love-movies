@@ -1,4 +1,7 @@
 exports.seed = function (knex) {
+    return knex("critics")
+  .del()
+  .then(function () {
   return knex("critics").insert([
     {
       preferred_name: "Chana",
@@ -36,4 +39,5 @@ exports.seed = function (knex) {
       organization_name: "Independent (UK)",
     },
   ]);
+});
 };
